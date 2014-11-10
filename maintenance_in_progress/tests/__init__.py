@@ -13,6 +13,7 @@ class TestCase(LiveServerTestCase):
 
     @classmethod
     def setUpClass(cls):
+        super(TestCase, cls).setUpClass()
         cls.fpath = os.path.join(tempfile.gettempdir(), "mip-marker")
 
     def tearDownTest(self):
@@ -24,6 +25,12 @@ class TestCase(LiveServerTestCase):
 
         if os.path.exists(self.fpath):
             os.path.unlink(self.fpath)
+
+        super(TestCase, self).tearDownTest()
+
+    def test_normal_500(self):
+        response = requests.get("%s/mip-error/" % self.live_server_url)
+        self.assertEqual(response.status_code, 500)
 
     def test_migration_db_500(self):
         p = preferences.MaintenanceInProgressPreferences
