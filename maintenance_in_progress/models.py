@@ -1,6 +1,7 @@
 from django.utils.translation import ugettext_lazy as _, ugettext
+from django.db import models
 
-dfom preferences.models import Preferences
+from preferences.models import Preferences
 
 
 class MaintenanceInProgressPreferences(Preferences):

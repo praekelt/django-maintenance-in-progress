@@ -2,7 +2,7 @@ import os
 
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.views.default import server_error as base_server_error
+from django.views.defaults import server_error as base_server_error
 from django.views.decorators.csrf import requires_csrf_token
 
 from preferences import preferences

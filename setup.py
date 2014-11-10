@@ -12,12 +12,13 @@ setup(
     url='http://github.com/praekelt/django-maintenance-in-progress',
     packages = find_packages(),
     install_requires = [
-        'Django',
+        'django',
         'django-preferences'
     ],
     include_package_data=True,
     tests_require=[
         'django-setuptest>=0.1.4',
+        'requests'
     ],
     test_suite="setuptest.setuptest.SetupTestSuite",
     classifiers=[
