@@ -28,18 +28,17 @@ class TestCase(LiveServerTestCase):
 
         super(TestCase, self).tearDownTest()
 
-    '''
     def test_normal_500(self):
         response = requests.get("%s/mip-error/" % self.live_server_url)
         self.assertEqual(response.status_code, 500)
-    '''
+
     def test_migration_db_500(self):
         p = Preferences.objects.get()
         p.in_progress = True
         p.save()
         response = requests.get("%s/mip-error/" % self.live_server_url)
         self.assertEqual(response.status_code, 200)
-    '''
+
     def test_migration_file_500(self):
         fp = open(self.fpath, "w")
         fp.write("x")
@@ -49,4 +48,3 @@ class TestCase(LiveServerTestCase):
         p.save()
         response = requests.get("%s/mip-error/" % self.live_server_url)
         self.assertEqual(response.status_code, 200)
-    '''

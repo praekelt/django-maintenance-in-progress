@@ -14,7 +14,6 @@ DATABASES = {
 
 INSTALLED_APPS = [
     'maintenance_in_progress',
-    'django.contrib.sites',
 ]
 
 MIDDLEWARE_CLASSES = [

@@ -5,7 +5,7 @@ from django.template import RequestContext
 from django.views.defaults import server_error as base_server_error
 from django.views.decorators.csrf import requires_csrf_token
 
-from migration_in_progress.models import Preferences
+from maintenance_in_progress.models import Preferences
 
 
 def server_error(request, template_name="maintenance_in_progress/500.html"):
