@@ -6,11 +6,27 @@ Django Maintenance in Progress
    :align: center
    :alt: Travis
 
-.. contents:: Contents
-    :depth: 5
-
 Overview
 --------
 
-To expand. x
+During system maintenance some pages may produce errors due to eg. database upgrades. A blanket rule
+would take down the entire site, which is naturally undesirable. `maintenance_in_progress` only displays
+a maintenance message when a 500 error is encountered during the maintenance window.
+
+Installation
+------------
+
+#. Install or add ``django-maintenance-in-progress`` to your Python path.
+
+#. Add ``maintenance_in_progress`` to your ``INSTALLED_APPS`` setting.
+
+#. Set ``handler500 = 'maintenance_in_progress.views.server_error`` in `urls.py`.
+
+
+Usage
+-----
+
+Admin has a `Maintenance In Progress Preferences` link where you can choose to indicate
+maintenance is in progress either by a flag in the database or by creating a file on the
+filesystem.
 
