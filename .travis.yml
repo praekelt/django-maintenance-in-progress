@@ -10,6 +10,6 @@ env:
 
 install:
   - pip install -q $DJANGO --use-mirrors
-  - pip install -e setup.py .
+  - pip install -e .
 
 script: python setup.py test
