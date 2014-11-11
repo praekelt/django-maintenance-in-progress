@@ -1,0 +1,8 @@
+# Ex
+include setup.py
+include README.rst
+include LICENCE
+include AUTHORS.rst
+include CHANGELOG.rst
+include test_settings.py
+recursive-include maintenance_in_progress *
