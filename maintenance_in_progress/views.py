@@ -5,12 +5,12 @@ from django.template import RequestContext
 from django.views.defaults import server_error as base_server_error
 from django.views.decorators.csrf import requires_csrf_token
 
-from preferences import preferences
+from maintenance_in_progress.models import Preferences
 
 
 def server_error(request, template_name="maintenance_in_progress/500.html"):
     """If maintenance is in progress render a friendly page"""
-    p = preferences.MaintenanceInProgressPreferences
+    p = Preferences.objects.get()
     if p.in_progress or (p.file_marker and os.path.exists(p.file_marker)):
         # Set immediate expiry time because we're effectively returning the
         # wrong content with status code 200.

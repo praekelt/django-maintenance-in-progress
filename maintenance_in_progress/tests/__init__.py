@@ -6,7 +6,7 @@ import requests
 from django.test.client import Client, RequestFactory
 from django.test import LiveServerTestCase
 
-from preferences import preferences
+from maintenance_in_progress.models import Preferences
 
 
 class TestCase(LiveServerTestCase):
@@ -18,7 +18,7 @@ class TestCase(LiveServerTestCase):
 
     def tearDownTest(self):
         # Reset to defaults
-        p = preferences.MaintenanceInProgressPreferences
+        p = Preferences.objects.get()
         p.in_progress = False
         p.file_marker = None
         p.save()
@@ -33,7 +33,7 @@ class TestCase(LiveServerTestCase):
         self.assertEqual(response.status_code, 500)
 
     def test_migration_db_500(self):
-        p = preferences.MaintenanceInProgressPreferences
+        p = Preferences.objects.get()
         p.in_progress = True
         p.save()
         response = requests.get("%s/mip-error/" % self.live_server_url)
@@ -43,7 +43,7 @@ class TestCase(LiveServerTestCase):
         fp = open(self.fpath, "w")
         fp.write("x")
         fp.close()
-        p = preferences.MaintenanceInProgressPreferences
+        p = Preferences.objects.get()
         p.file_marker = self.fpath
         p.save()
         response = requests.get("%s/mip-error/" % self.live_server_url)

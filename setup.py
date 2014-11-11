@@ -13,7 +13,6 @@ setup(
     packages = find_packages(),
     install_requires = [
         'django',
-        'django-preferences'
     ],
     include_package_data=True,
     tests_require=[
