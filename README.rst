@@ -10,7 +10,7 @@ Overview
 --------
 
 During system maintenance some pages may produce errors due to eg. database upgrades. A blanket rule
-would take down the entire site, which is naturally undesirable. `maintenance_in_progress` only displays
+would take down the entire site, which is naturally undesirable. ``maintenance_in_progress`` only displays
 a maintenance message when a 500 error is encountered during the maintenance window.
 
 Installation
@@ -20,13 +20,13 @@ Installation
 
 #. Add ``maintenance_in_progress`` to your ``INSTALLED_APPS`` setting.
 
-#. Set ``handler500 = 'maintenance_in_progress.views.server_error`` in `urls.py`.
+#. Set ``handler500 = 'maintenance_in_progress.views.server_error'`` in ``urls.py``.
 
 
 Usage
 -----
 
-Admin has a `Maintenance In Progress Preferences` link where you can choose to indicate
+Admin has a ``Maintenance In Progress Preferences`` link where you can choose to indicate
 maintenance is in progress either by a flag in the database or by creating a file on the
 filesystem.
 
