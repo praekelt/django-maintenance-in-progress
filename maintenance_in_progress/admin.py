@@ -1,14 +1,11 @@
 from django.contrib import admin
 
-from preferences.admin import PreferencesAdmin
-
-from maintenance_in_progress.models import MaintenanceInProgressPreferences
+from maintenance_in_progress.models import Preferences
 
 
-class MaintenanceInProgressPreferencesAdmin(PreferencesAdmin):
+class PreferencesAdmin(admin.ModelAdmin):
+    dummy = Preferences()
     pass
 
 
-admin.site.register(
-    MaintenanceInProgressPreferences, MaintenanceInProgressPreferencesAdmin
-)
+admin.site.register(Preferences, PreferencesAdmin)

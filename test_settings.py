@@ -14,7 +14,6 @@ DATABASES = {
 
 INSTALLED_APPS = [
     'maintenance_in_progress',
-    'preferences',
     'django.contrib.sites',
 ]
 
