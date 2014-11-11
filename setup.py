@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-maintenance-in-progress',
-    version='0.1-dev',
+    version='0.1',
     description='Intercept possible 500 errors when site maintenance is in progress and display a friendly page.',
     long_description = open('README.rst', 'r').read() + open('AUTHORS.rst', 'r').read() + open('CHANGELOG.rst', 'r').read(),
     author='Hedley Roos',
